@@ -86,7 +86,7 @@ const Modal = () => {
   useEffect(
     () =>
       setAddedToList(
-        movies.findIndex((result) => result.data().id === movie?.id) !== -1
+        movies.findIndex((result : any) => result.data().id === movie?.id) !== -1
       ),
     [movies]
   )
@@ -124,6 +124,8 @@ const Modal = () => {
 
   const handleClose = () => {
     setShowModal(false)
+    setMovie(null)
+    toast.dismiss()
   }
   return (
     <MuiModal
