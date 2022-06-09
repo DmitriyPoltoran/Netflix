@@ -1,4 +1,5 @@
 import { getProducts, Product } from '@stripe/firestore-stripe-payments'
+import moment from 'moment'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -45,7 +46,7 @@ const Account = ({ products }: Props) => {
           <div className="-ml-0.5 flex items-center gap-x-1.5">
             <img src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
             <p className="text-xs font-semibold text-[#555]">
-              Member since {subscription?.created}
+              Member since {moment(subscription?.created).format('LLL')}
             </p>
           </div>
         </div>
